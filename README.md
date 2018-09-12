@@ -18,7 +18,7 @@ While under early development, HTML documentation of this ontology can be viewed
 
 Local copies:
 * HTML: [appframe.html](appframe.html)  
-* RDF Turtle: [appframe.ttl](appframe.ttl)>
+* RDF Turtle: [appframe.ttl](appframe.ttl)
 
 
 ## License
