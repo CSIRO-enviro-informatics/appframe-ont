@@ -1,0 +1,254 @@
+@prefix : <http://test.linked.data.gov.au/def/appframe/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gnaf: <http://gnafld.net/def/gnaf#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://linked.data.gov.au/def/appf> .
+
+<http://linked.data.gov.au/def/appf> rdf:type owl:Ontology ;
+                                      owl:versionIRI <http://linked.data.gov.au/def/appf/0.6> ;
+                                      owl:imports <http://www.w3.org/ns/time/gregorian> ,
+                                                  time: ,
+                                                  org: ;
+                                      vann:preferredNamespacePrefix "appf" ;
+                                      dc:creator "Nicholas J. Car" ;
+                                      owl:versionInfo "0.1"@en ;
+                                      rdfs:comment """This is an OWL ontology of the Australian Federal Government's Appropriations Framework that is maintained by the Australian Federal Government's Department of Finance.
+
+It is not, yet, a comprehensive modelling of all of the concerns of the Appropriations Framework and certainly not of all issues relating to the Appropriations Framework, such as Portfolio Budget Statements.
+
+It only addresses some aspects of the Appropriations Framework necessary to classify government Entities. This is due to the focus of the development of this ontology: to assist with the creation of a 'Longitudinal Spine' of government functions."""@en ;
+                                      rdfs:label "Appropriations Framework Ontology"@en ;
+                                      dcterms:publisher <http://www.csiro.au> ;
+                                      dc:publisher "CSIRO" ;
+                                      dcterms:created "2018-09-12"^^xsd:date ;
+                                      dcterms:contributor <https://orcid.org/0000-0002-3884-3420> ;
+                                      owl:versionInfo "Beta version"@en ;
+                                      dcterms:creator <http://orcid.org/0000-0002-8742-7730> ;
+                                      dc:contributor "Simon J.D. Cox" ;
+                                      rdfs:seeAlso "The GitHub repository containing addition documentation: http://github.com/CSIRO-enviro-informatics/appframe-ont/"@en ;
+                                      dcterms:modified "2018-09-12"^^xsd:date ;
+                                      dc:contributor "David Morton (Department of Finance)" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://linked.data.gov.au/def/appf/budgetDuration
+<http://linked.data.gov.au/def/appf/budgetDuration> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://linked.data.gov.au/def/appf/BudgetItem> ;
+                                                    rdfs:range time:TemporalDuration ;
+                                                    rdfs:comment "duration of interval over which budget applies"@en ;
+                                                    rdfs:label "budget duration" .
+
+
+###  http://linked.data.gov.au/def/appf/budgetInterval
+<http://linked.data.gov.au/def/appf/budgetInterval> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://linked.data.gov.au/def/appf/BudgetItem> ;
+                                                    rdfs:range time:ProperInterval ;
+                                                    rdfs:comment "Interval over which budget applies"@en ;
+                                                    rdfs:label "budget interval" .
+
+
+###  http://linked.data.gov.au/def/appf/budgetPurpose
+<http://linked.data.gov.au/def/appf/budgetPurpose> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://linked.data.gov.au/def/appf/BudgetItem> ;
+                                                   rdfs:range <http://linked.data.gov.au/def/appf/Function> ;
+                                                   rdfs:comment "Purpose for which budget is allocated"@en ;
+                                                   rdfs:label "budget purpose" .
+
+
+###  http://linked.data.gov.au/def/appf/budgetQuantity
+<http://linked.data.gov.au/def/appf/budgetQuantity> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://linked.data.gov.au/def/appf/BudgetItem> ;
+                                                    rdfs:range <http://linked.data.gov.au/def/appf/SumOfMoney> ;
+                                                    rdfs:comment "The sum of money"@en ;
+                                                    rdfs:label "budget quantity" .
+
+
+###  http://linked.data.gov.au/def/appf/budgetSource
+<http://linked.data.gov.au/def/appf/budgetSource> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://linked.data.gov.au/def/appf/BudgetItem> ;
+                                                  rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+                                                  rdfs:comment "The Agent delivering the sum of money for the budget item"@en ;
+                                                  rdfs:label "source of budget" .
+
+
+###  http://linked.data.gov.au/def/appf/hasAppropriations
+<http://linked.data.gov.au/def/appf/hasAppropriations> rdf:type owl:ObjectProperty ;
+                                                       rdfs:subPropertyOf <http://linked.data.gov.au/def/appf/hasBudgetItem> ;
+                                                       rdfs:range <http://linked.data.gov.au/def/appf/Appropriations> ;
+                                                       rdfs:comment "Has a current annual budgetary appropriation amount in Australian Dollars" ;
+                                                       rdfs:label "Annual appropriation budget (AUD)" .
+
+
+###  http://linked.data.gov.au/def/appf/hasBudgetItem
+<http://linked.data.gov.au/def/appf/hasBudgetItem> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain org:Organization ;
+                                                   rdfs:range <http://linked.data.gov.au/def/appf/BudgetItem> ;
+                                                   rdfs:label "budget item" .
+
+
+###  http://linked.data.gov.au/def/appf/inPortfolio
+<http://linked.data.gov.au/def/appf/inPortfolio> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf org:subOrganizationOf ;
+                                                 rdfs:range <http://linked.data.gov.au/def/appf/Portfolio> ;
+                                                 rdfs:comment "is within a particular government Portfolio"@en ;
+                                                 rdfs:label "in portfolio"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://linked.data.gov.au/def/appf/moneyAmount
+<http://linked.data.gov.au/def/appf/moneyAmount> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <http://linked.data.gov.au/def/appf/SumOfMoney> ;
+                                                 rdfs:range xsd:decimal ;
+                                                 rdfs:comment "Ammount of money"@en ;
+                                                 rdfs:label "money amount" .
+
+
+###  http://linked.data.gov.au/def/appf/moneyCurrency
+<http://linked.data.gov.au/def/appf/moneyCurrency> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://linked.data.gov.au/def/appf/SumOfMoney> ;
+                                                   rdfs:range xsd:string ;
+                                                   rdfs:comment "Money currency - ISO 4217 code"@en ;
+                                                   rdfs:label "money currency" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://linked.data.gov.au/def/appf/Appropriations
+<http://linked.data.gov.au/def/appf/Appropriations> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://linked.data.gov.au/def/appf/BudgetItem> ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://linked.data.gov.au/def/appf/budgetQuantity> ;
+                                                                      owl:allValuesFrom <http://linked.data.gov.au/def/appf/AustralianDollars>
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://linked.data.gov.au/def/appf/budgetDuration> ;
+                                                                      owl:hasValue time:unitYear
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://linked.data.gov.au/def/appf/budgetSource> ;
+                                                                      owl:hasValue <http://linked.data.gov.au/def/appf/CommonwealthOfAustralia>
+                                                                    ] ;
+                                                    rdfs:label "Appropriations budget (annualized)" .
+
+
+###  http://linked.data.gov.au/def/appf/AustralianDollars
+<http://linked.data.gov.au/def/appf/AustralianDollars> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://linked.data.gov.au/def/appf/SumOfMoney> ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://linked.data.gov.au/def/appf/moneyAmount> ;
+                                                                         owl:allValuesFrom xsd:integer
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://linked.data.gov.au/def/appf/moneyCurrency> ;
+                                                                         owl:hasValue "AUD"
+                                                                       ] ;
+                                                       rdfs:comment "Sum of money in whole Australian Dollars"@en ;
+                                                       rdfs:label "Australian Dollars"@en .
+
+
+###  http://linked.data.gov.au/def/appf/BudgetItem
+<http://linked.data.gov.au/def/appf/BudgetItem> rdf:type owl:Class ;
+                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://linked.data.gov.au/def/appf/budgetPurpose> ;
+                                                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                ] ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://linked.data.gov.au/def/appf/budgetSource> ;
+                                                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                ] ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://linked.data.gov.au/def/appf/budgetDuration> ;
+                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                ] ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://linked.data.gov.au/def/appf/budgetInterval> ;
+                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                ] ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://linked.data.gov.au/def/appf/budgetQuantity> ;
+                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                ] ;
+                                                rdfs:label "Budget item" .
+
+
+###  http://linked.data.gov.au/def/appf/Function
+<http://linked.data.gov.au/def/appf/Function> rdf:type owl:Class .
+
+
+###  http://linked.data.gov.au/def/appf/Outcome
+<http://linked.data.gov.au/def/appf/Outcome> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://reference.data.gov.au/def/ont/agrif#Function> ;
+                                             rdfs:comment "The results, impacts or consequences of a purpose or activity, as defined in the annual Appropriation Acts and the portfolio budget statements, by a Commonwealth entity and company."@en ;
+                                             rdfs:label "Government Outcome" .
+
+
+###  http://linked.data.gov.au/def/appf/Portfolio
+<http://linked.data.gov.au/def/appf/Portfolio> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://reference.data.gov.au/def/ont/agrif#Function> ;
+                                               rdfs:comment "A portfolio is a minister's area of responsibility as a member of Cabinet. As a general rule, there is one department associated with each portfolio."@en ;
+                                               rdfs:isDefinedBy <https://www.australia.gov.au/about-government/departments-and-agencies> ;
+                                               rdfs:label "Government Portfolio"@en .
+
+
+###  http://linked.data.gov.au/def/appf/Program
+<http://linked.data.gov.au/def/appf/Program> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://reference.data.gov.au/def/ont/agrif#Function> ;
+                                             rdfs:comment "Commonwealth programs deliver benefits, services or transfer payments to individuals, organizations or the community as a whole, and/or policy advice to inform government decisions. A program is comprised of activities or groups of activities, as defined in the annual Appropriation Acts and portfolio budget statements, by Commonwealth entity and company."@en ;
+                                             rdfs:label "Government Program" .
+
+
+###  http://linked.data.gov.au/def/appf/SumOfMoney
+<http://linked.data.gov.au/def/appf/SumOfMoney> rdf:type owl:Class ;
+                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://linked.data.gov.au/def/appf/moneyAmount> ;
+                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                ] ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://linked.data.gov.au/def/appf/moneyCurrency> ;
+                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                ] ;
+                                                rdfs:label "Sum of money" .
+
+
+###  http://reference.data.gov.au/def/ont/agrif#Function
+<http://reference.data.gov.au/def/ont/agrif#Function> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/timeProperInterval
+time:ProperInterval rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/timeTemporalDuration
+time:TemporalDuration rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://linked.data.gov.au/def/appf/CommonwealthOfAustralia
+<http://linked.data.gov.au/def/appf/CommonwealthOfAustralia> rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/2006/timeunitYear
+time:unitYear rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

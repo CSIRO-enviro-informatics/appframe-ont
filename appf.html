@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Appropriations Framework Ontology</title>
+  <link href="style/owl.css" rel="stylesheet" type="text/css">
+  <link href="style/Primer.css" rel="stylesheet" type="text/css">
+  <link href="style/rec.css" rel="stylesheet" type="text/css">
+  <link href="style/extra.css" rel="stylesheet" type="text/css">
+  <link href="style/nick.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="head">
+  <img src="style/csiro-logo.png" style="width:100px;" alt="CSIRO Logo" /><br />
+  <h1>Appropriations Framework Ontology</h1>
+  <dl>
+    <dt>
+      IRI:
+    </dt>
+    <dd>
+      http://linked.data.gov.au/def/appf
+    </dd>
+    <dt>
+      Version IRI:
+    </dt>
+    <dd>
+      http://linked.data.gov.au/def/appf/0.6
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      Current version:
+    </dt>
+    <dd>
+      0.1
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      Authors:
+    </dt>
+    <dd>
+      Nicholas J. Car
+    </dd>
+    <dd>
+      <a href="http://orcid.org/0000-0002-8742-7730">http://orcid.org/0000-0002-8742-7730</a>
+    </dd>
+    <dt>
+      Contributors:
+    </dt>
+    <dd>
+      David Morton (Department of Finance)
+    </dd>
+    <dd>
+      Simon J.D. Cox
+    </dd>
+    <dd>
+      <a href="https://orcid.org/0000-0002-3884-3420">https://orcid.org/0000-0002-3884-3420</a>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      Publisher:
+    </dt>
+    <dd>
+      CSIRO
+    </dd>
+    <dd>
+      <a href="http://www.csiro.au">http://www.csiro.au</a>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      Imported Ontologies:
+    </dt>
+    <dd>
+      <a href="http://www.w3.org/ns/time/gregorian">http://www.w3.org/ns/time/gregorian</a>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      Ontology source:
+    </dt>
+    <dd>
+      <a href="https://linked.data.gov.au/def/appf.ttl">Ontology source (RDF, turtle)</a>
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      Further documentation &amp; examples:
+    </dt>
+    <dd>
+      <a href="http://github.com/CSIRO-enviro-informatics/appf-ont">This ontology's full documentation on GitHub</a>
+    </dd>
+  </dl>
+</div>
+<hr>
+<h2>Abstract</h2>
+<p>This is an OWL ontology of the Australian Federal Government's Appropriations Framework that is maintained by the Australian Federal Government's <a href="https://www.finance.gov.au/">Department of Finance</a>.</p> <p>It is not, yet, a comprehensive modelling of all of the concerns of the Appropriations Framework and certainly not of all issues relating to the Appropriations Framework, such as Portfolio Budget Statements.</p> <p>It only addresses some aspects of the Appropriations Framework necessary to classify government Entities. This is due to the focus of the development of this ontology: to assist with the creation of a 'Longitudinal Spine' of government functions.</p>
+<div id="toc">
+  <h2>Table of Content</h2>
+  <ol>
+    <li><a href="#classes">Classes</a></li>
+    <li><a href="#objectproperties">Object Properties</a></li>
+    <li><a href="#dataproperties">Data Properties</a></li>
+    <li><a href="#namespacedeclarations">Namespace Declarations</a></li>
+  </ol>
+</div>
+<div id="classes">
+  <h2>Classes</h2>
+  <div class="figure">
+    <img src="images/classes.png" title="Appropriations Framework ontology Class diagram" style="width:900px;" /><br />
+    <span class="caption"><strong>Figure 1</strong>: Appropriations Framework ontology Class diagram</span>
+  </div>
+  <ul class="hlist">
+    <li><a href="#Appropriations" title="http://linked.data.gov.au/def/appf/Appropriations">Appropriations budget (annualized)</a></li>
+    <li><a href="#AustralianDollars" title="http://linked.data.gov.au/def/appf/AustralianDollars">Australian Dollars</a></li>
+    <li><a href="#BudgetItem" title="http://linked.data.gov.au/def/appf/BudgetItem">Budget item</a></li>
+    <li><a href="#Outcome" title="http://linked.data.gov.au/def/appf/Outcome">Government Outcome</a></li>
+    <li><a href="#Portfolio" title="http://linked.data.gov.au/def/appf/Portfolio">Government Portfolio</a></li>
+    <li><a href="#Program" title="http://linked.data.gov.au/def/appf/Program">Government Program</a></li>
+    <li><a href="#SumOfMoney" title="http://linked.data.gov.au/def/appf/SumOfMoney">Sum of money</a></li>
+  </ul>
+  <div id="Appropriations" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/Appropriations"></a>
+    <h3>Appropriations budget (annualized)<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/Appropriations</p>
+    <dl class="description">
+      <dt>
+        has super-classes
+      </dt>
+      <dd>
+        <a href="#BudgetItem" title="http://linked.data.gov.au/def/appf/BudgetItem">Budget item</a>
+        <sup title="class" class="type-c">c</sup>
+      </dd>
+      <dd>
+        <a href="#budgetQuantity" title="http://linked.data.gov.au/def/appf/budgetQuantity">budget quantity</a>
+        <sup title="object property" class="type-op">op</sup>
+        <span class="logic">only</span>
+        <a href="#AustralianDollars" title="http://linked.data.gov.au/def/appf/AustralianDollars">Australian Dollars</a>
+        <sup title="class" class="type-c">c</sup>
+      </dd>
+      <dd>
+        <a href="#budgetDuration" title="http://linked.data.gov.au/def/appf/budgetDuration">budget duration</a>
+        <sup title="object property" class="type-op">op</sup>
+        <span class="logic">value</span>
+        <span class="dotted" title="http://www.w3.org/2006/timeunitYear">timeunit year</span>
+      </dd>
+      <dd>
+        <a href="#budgetSource" title="http://linked.data.gov.au/def/appf/budgetSource">source of budget</a>
+        <sup title="object property" class="type-op">op</sup>
+        <span class="logic">value</span>
+        <span class="dotted" title="http://linked.data.gov.au/def/appf/CommonwealthOfAustralia">commonwealth of australia</span>
+      </dd>
+      <dt>
+        is in range of
+      </dt>
+      <dd>
+        <a href="#hasAppropriations" title="http://linked.data.gov.au/def/appf/hasAppropriations">Annual appropriation budget (AUD)</a>
+        <sup title="object property" class="type-op">op</sup>
+      </dd>
+    </dl>
+  </div>
+  <div id="AustralianDollars" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/AustralianDollars"></a>
+    <h3>Australian Dollars<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/AustralianDollars</p>
+    <div class="comment">
+      <p>Sum of money in whole Australian Dollars</p>
+    </div>
+    <dl class="description">
+      <dt>
+        has super-classes
+      </dt>
+      <dd>
+        <a href="#SumOfMoney" title="http://linked.data.gov.au/def/appf/SumOfMoney">Sum of money</a>
+        <sup title="class" class="type-c">c</sup>
+      </dd>
+      <dd>
+        <a href="#moneyAmount" title="http://linked.data.gov.au/def/appf/moneyAmount">money amount</a>
+        <sup title="data property" class="type-dp">dp</sup>
+        <span class="logic">only</span>
+        <span class="dotted" title="http://www.w3.org/2001/XMLSchema#integer">integer</span>
+      </dd>
+      <dd>
+        <a href="#moneyCurrency" title="http://linked.data.gov.au/def/appf/moneyCurrency">money currency</a>
+        <sup title="data property" class="type-dp">dp</sup>
+        <span class="logic">value</span> AUD
+      </dd>
+    </dl>
+  </div>
+  <div id="BudgetItem" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/BudgetItem"></a>
+    <h3>Budget item<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/BudgetItem</p>
+    <dl class="description">
+      <dt>
+        has super-classes
+      </dt>
+      <dd>
+        <a href="#budgetPurpose" title="http://linked.data.gov.au/def/appf/budgetPurpose">budget purpose</a>
+        <sup title="object property" class="type-op">op</sup>
+        <span class="logic">min</span> 1
+      </dd>
+      <dd>
+        <a href="#budgetSource" title="http://linked.data.gov.au/def/appf/budgetSource">source of budget</a>
+        <sup title="object property" class="type-op">op</sup>
+        <span class="logic">min</span> 1
+      </dd>
+      <dd>
+        <a href="#budgetDuration" title="http://linked.data.gov.au/def/appf/budgetDuration">budget duration</a>
+        <sup title="object property" class="type-op">op</sup>
+        <span class="logic">exactly</span> 1
+      </dd>
+      <dd>
+        <a href="#budgetInterval" title="http://linked.data.gov.au/def/appf/budgetInterval">budget interval</a>
+        <sup title="object property" class="type-op">op</sup>
+        <span class="logic">exactly</span> 1
+      </dd>
+      <dd>
+        <a href="#budgetQuantity" title="http://linked.data.gov.au/def/appf/budgetQuantity">budget quantity</a>
+        <sup title="object property" class="type-op">op</sup>
+        <span class="logic">exactly</span> 1
+      </dd>
+      <dt>
+        has sub-classes
+      </dt>
+      <dd>
+        <a href="#Appropriations" title="http://linked.data.gov.au/def/appf/Appropriations">Appropriations budget (annualized)</a>
+        <sup title="class" class="type-c">c</sup>
+      </dd>
+      <dt>
+        is in domain of
+      </dt>
+      <dd>
+        <a href="#budgetDuration" title="http://linked.data.gov.au/def/appf/budgetDuration">budget duration</a>
+        <sup title="object property" class="type-op">op</sup>,
+        <a href="#budgetInterval" title="http://linked.data.gov.au/def/appf/budgetInterval">budget interval</a>
+        <sup title="object property" class="type-op">op</sup>,
+        <a href="#budgetPurpose" title="http://linked.data.gov.au/def/appf/budgetPurpose">budget purpose</a>
+        <sup title="object property" class="type-op">op</sup>,
+        <a href="#budgetQuantity" title="http://linked.data.gov.au/def/appf/budgetQuantity">budget quantity</a>
+        <sup title="object property" class="type-op">op</sup>,
+        <a href="#budgetSource" title="http://linked.data.gov.au/def/appf/budgetSource">source of budget</a>
+        <sup title="object property" class="type-op">op</sup>
+      </dd>
+      <dt>
+        is in range of
+      </dt>
+      <dd>
+        <a href="#hasBudgetItem" title="http://linked.data.gov.au/def/appf/hasBudgetItem">budget item</a>
+        <sup title="object property" class="type-op">op</sup>
+      </dd>
+    </dl>
+  </div>
+  <div id="Outcome" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/Outcome"></a>
+    <h3>Government Outcome<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/Outcome</p>
+    <div class="comment">
+      <p>The results, impacts or consequences of a purpose or activity, as defined in the annual Appropriation Acts and the portfolio budget statements, by a Commonwealth entity and company.</p>
+    </div>
+    <dl class="description">
+      <dt>
+        has super-classes
+      </dt>
+      <dd>
+        <span class="dotted" title="http://reference.data.gov.au/def/ont/agrif#Function">function</span>
+        <sup title="class" class="type-c">c</sup>
+      </dd>
+    </dl>
+  </div>
+  <div id="Portfolio" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/Portfolio"></a>
+    <h3>Government Portfolio<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/Portfolio</p>
+    <dl class="definedBy">
+      <dt>
+        is defined by
+      </dt>
+      <dd>
+        <a href="https://www.australia.gov.au/about-government/departments-and-agencies">https://www.australia.gov.au/about-government/departments-and-agencies</a>
+      </dd>
+    </dl>
+    <div class="comment">
+      <p>A portfolio is a minister's area of responsibility as a member of Cabinet. As a general rule, there is one department associated with each portfolio.</p>
+    </div>
+    <dl class="description">
+      <dt>
+        has super-classes
+      </dt>
+      <dd>
+        <span class="dotted" title="http://reference.data.gov.au/def/ont/agrif#Function">function</span>
+        <sup title="class" class="type-c">c</sup>
+      </dd>
+      <dt>
+        is in range of
+      </dt>
+      <dd>
+        <a href="#inPortfolio" title="http://linked.data.gov.au/def/appf/inPortfolio">in portfolio</a>
+        <sup title="object property" class="type-op">op</sup>
+      </dd>
+    </dl>
+  </div>
+  <div id="Program" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/Program"></a>
+    <h3>Government Program<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/Program</p>
+    <div class="comment">
+      <p>Commonwealth programs deliver benefits, services or transfer payments to individuals, organizations or the community as a whole, and/or policy advice to inform government decisions. A program is comprised of activities or groups of activities, as defined in the annual Appropriation Acts and portfolio budget statements, by Commonwealth entity and company.</p>
+    </div>
+    <dl class="description">
+      <dt>
+        has super-classes
+      </dt>
+      <dd>
+        <span class="dotted" title="http://reference.data.gov.au/def/ont/agrif#Function">function</span>
+        <sup title="class" class="type-c">c</sup>
+      </dd>
+    </dl>
+  </div>
+  <div id="SumOfMoney" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/SumOfMoney"></a>
+    <h3>Sum of money<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/SumOfMoney</p>
+    <dl class="description">
+      <dt>
+        has super-classes
+      </dt>
+      <dd>
+        <a href="#moneyAmount" title="http://linked.data.gov.au/def/appf/moneyAmount">money amount</a>
+        <sup title="data property" class="type-dp">dp</sup>
+        <span class="logic">exactly</span> 1
+      </dd>
+      <dd>
+        <a href="#moneyCurrency" title="http://linked.data.gov.au/def/appf/moneyCurrency">money currency</a>
+        <sup title="data property" class="type-dp">dp</sup>
+        <span class="logic">exactly</span> 1
+      </dd>
+      <dt>
+        has sub-classes
+      </dt>
+      <dd>
+        <a href="#AustralianDollars" title="http://linked.data.gov.au/def/appf/AustralianDollars">Australian Dollars</a>
+        <sup title="class" class="type-c">c</sup>
+      </dd>
+      <dt>
+        is in domain of
+      </dt>
+      <dd>
+        <a href="#moneyAmount" title="http://linked.data.gov.au/def/appf/moneyAmount">money amount</a>
+        <sup title="data property" class="type-dp">dp</sup>,
+        <a href="#moneyCurrency" title="http://linked.data.gov.au/def/appf/moneyCurrency">money currency</a>
+        <sup title="data property" class="type-dp">dp</sup>
+      </dd>
+      <dt>
+        is in range of
+      </dt>
+      <dd>
+        <a href="#budgetQuantity" title="http://linked.data.gov.au/def/appf/budgetQuantity">budget quantity</a>
+        <sup title="object property" class="type-op">op</sup>
+      </dd>
+    </dl>
+  </div>
+</div>
+<div id="objectproperties">
+  <h2>Object Properties</h2>
+  <div class="figure">
+    <img src="images/objects.png" title="Appropriations Framework ontology object properties" style="width:700px;" /><br />
+    <span class="caption"><strong>Figure 2</strong>: Appropriations Framework ontology object properties</span>
+  </div>
+  <ul class="hlist">
+    <li><a href="#hasAppropriations" title="http://linked.data.gov.au/def/appf/hasAppropriations">Annual appropriation budget (AUD)</a></li>
+    <li><a href="#budgetDuration" title="http://linked.data.gov.au/def/appf/budgetDuration">budget duration</a></li>
+    <li><a href="#budgetInterval" title="http://linked.data.gov.au/def/appf/budgetInterval">budget interval</a></li>
+    <li><a href="#hasBudgetItem" title="http://linked.data.gov.au/def/appf/hasBudgetItem">budget item</a></li>
+    <li><a href="#budgetPurpose" title="http://linked.data.gov.au/def/appf/budgetPurpose">budget purpose</a></li>
+    <li><a href="#budgetQuantity" title="http://linked.data.gov.au/def/appf/budgetQuantity">budget quantity</a></li>
+    <li><a href="#inPortfolio" title="http://linked.data.gov.au/def/appf/inPortfolio">in portfolio</a></li>
+    <li><a href="#budgetSource" title="http://linked.data.gov.au/def/appf/budgetSource">source of budget</a></li>
+  </ul>
+  <div id="hasAppropriations" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/hasAppropriations"></a>
+    <h3>Annual appropriation budget (AUD)<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/hasAppropriations</p>
+    <div class="comment">
+      <p>Has a current annual budgetary appropriation amount in Australian Dollars</p>
+    </div>
+    <div class="description">
+      <dl>
+        <dt>
+          has super-properties
+        </dt>
+        <dd>
+          <a href="#hasBudgetItem" title="http://linked.data.gov.au/def/appf/hasBudgetItem">budget item</a>
+          <sup title="object property" class="type-op">op</sup>
+        </dd>
+        <dt>
+          has range
+        </dt>
+        <dd>
+          <a href="#Appropriations" title="http://linked.data.gov.au/def/appf/Appropriations">Appropriations budget (annualized)</a>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div id="budgetDuration" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/budgetDuration"></a>
+    <h3>budget duration<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/budgetDuration</p>
+    <div class="comment">
+      <p>duration of interval over which budget applies</p>
+    </div>
+    <div class="description">
+      <dl>
+        <dt>
+          has domain
+        </dt>
+        <dd>
+          <a href="#BudgetItem" title="http://linked.data.gov.au/def/appf/BudgetItem">Budget item</a>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+        <dt>
+          has range
+        </dt>
+        <dd>
+          <span class="dotted" title="http://www.w3.org/2006/timeTemporalDuration">time temporal duration</span>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div id="budgetInterval" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/budgetInterval"></a>
+    <h3>budget interval<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/budgetInterval</p>
+    <div class="comment">
+      <p>Interval over which budget applies</p>
+    </div>
+    <div class="description">
+      <dl>
+        <dt>
+          has domain
+        </dt>
+        <dd>
+          <a href="#BudgetItem" title="http://linked.data.gov.au/def/appf/BudgetItem">Budget item</a>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+        <dt>
+          has range
+        </dt>
+        <dd>
+          <span class="dotted" title="http://www.w3.org/2006/timeProperInterval">time proper interval</span>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div id="hasBudgetItem" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/hasBudgetItem"></a>
+    <h3>budget item<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/hasBudgetItem</p>
+    <div class="description">
+      <dl>
+        <dt>
+          has sub-properties
+        </dt>
+        <dd>
+          <a href="#hasAppropriations" title="http://linked.data.gov.au/def/appf/hasAppropriations">Annual appropriation budget (AUD)</a>
+          <sup title="object property" class="type-op">op</sup>
+        </dd>
+        <dt>
+          has domain
+        </dt>
+        <dd>
+          <span class="dotted" title="http://www.w3.org/ns/org#Organization">organization</span>
+        </dd>
+        <dt>
+          has range
+        </dt>
+        <dd>
+          <a href="#BudgetItem" title="http://linked.data.gov.au/def/appf/BudgetItem">Budget item</a>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div id="budgetPurpose" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/budgetPurpose"></a>
+    <h3>budget purpose<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/budgetPurpose</p>
+    <div class="comment">
+      <p>Purpose for which budget is allocated</p>
+    </div>
+    <div class="description">
+      <dl>
+        <dt>
+          has domain
+        </dt>
+        <dd>
+          <a href="#BudgetItem" title="http://linked.data.gov.au/def/appf/BudgetItem">Budget item</a>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+        <dt>
+          has range
+        </dt>
+        <dd>
+          <span class="dotted" title="http://linked.data.gov.au/def/appf/Function">function</span>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div id="budgetQuantity" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/budgetQuantity"></a>
+    <h3>budget quantity<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/budgetQuantity</p>
+    <div class="comment">
+      <p>The sum of money</p>
+    </div>
+    <div class="description">
+      <dl>
+        <dt>
+          has domain
+        </dt>
+        <dd>
+          <a href="#BudgetItem" title="http://linked.data.gov.au/def/appf/BudgetItem">Budget item</a>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+        <dt>
+          has range
+        </dt>
+        <dd>
+          <a href="#SumOfMoney" title="http://linked.data.gov.au/def/appf/SumOfMoney">Sum of money</a>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div id="inPortfolio" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/inPortfolio"></a>
+    <h3>in portfolio<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/inPortfolio</p>
+    <div class="comment">
+      <p>is within a particular government Portfolio</p>
+    </div>
+    <div class="description">
+      <dl>
+        <dt>
+          has super-properties
+        </dt>
+        <dd>
+          <span class="dotted" title="http://www.w3.org/ns/org#subOrganizationOf">sub organization of</span>
+        </dd>
+        <dt>
+          has range
+        </dt>
+        <dd>
+          <a href="#Portfolio" title="http://linked.data.gov.au/def/appf/Portfolio">Government Portfolio</a>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div id="budgetSource" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/budgetSource"></a>
+    <h3>source of budget<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/budgetSource</p>
+    <div class="comment">
+      <p>The Agent delivering the sum of money for the budget item</p>
+    </div>
+    <div class="description">
+      <dl>
+        <dt>
+          has domain
+        </dt>
+        <dd>
+          <a href="#BudgetItem" title="http://linked.data.gov.au/def/appf/BudgetItem">Budget item</a>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+        <dt>
+          has range
+        </dt>
+        <dd>
+          <span class="dotted" title="http://xmlns.com/foaf/0.1/Agent">agent</span>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+<div id="dataproperties">
+  <h2>Data Properties</h2>
+  <div class="figure">
+    <img src="images/datatypes.png" title="Appropriations Framework ontology datatype properties" style="width:700px;" /><br />
+    <span class="caption"><strong>Figure 3</strong>: Appropriations Framework ontology datatype properties</span>
+  </div>
+  <ul class="hlist">
+    <li><a href="#moneyAmount" title="http://linked.data.gov.au/def/appf/moneyAmount">money amount</a></li>
+    <li><a href="#moneyCurrency" title="http://linked.data.gov.au/def/appf/moneyCurrency">money currency</a></li>
+  </ul>
+  <div id="moneyAmount" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/moneyAmount"></a>
+    <h3>money amount<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/moneyAmount</p>
+    <div class="comment">
+      <p>Ammount of money</p>
+    </div>
+    <div class="description">
+      <dl>
+        <dt>
+          has domain
+        </dt>
+        <dd>
+          <a href="#SumOfMoney" title="http://linked.data.gov.au/def/appf/SumOfMoney">Sum of money</a>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+        <dt>
+          has range
+        </dt>
+        <dd>
+          <span class="dotted" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</span>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div id="moneyCurrency" class="entity">
+    <a name="http://linked.data.gov.au/def/appf/moneyCurrency"></a>
+    <h3>money currency<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+    <p><strong>IRI:</strong> http://linked.data.gov.au/def/appf/moneyCurrency</p>
+    <div class="comment">
+      <p>Money currency - ISO 4217 code</p>
+    </div>
+    <div class="description">
+      <dl>
+        <dt>
+          has domain
+        </dt>
+        <dd>
+          <a href="#SumOfMoney" title="http://linked.data.gov.au/def/appf/SumOfMoney">Sum of money</a>
+          <sup title="class" class="type-c">c</sup>
+        </dd>
+        <dt>
+          has range
+        </dt>
+        <dd>
+          <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+<div id="namespacedeclarations">
+  <h2>Namespace Declarations <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+  <dl>
+    <dt>
+      <em>default namespace</em>
+    </dt>
+    <dd>
+      http://linked.data.gov.au/def/appf#
+    </dd>
+    <dt>
+      2006
+    </dt>
+    <dd>
+      http://www.w3.org/2006/
+    </dd>
+    <dt>
+      about-government
+    </dt>
+    <dd>
+      https://www.australia.gov.au/about-government/
+    </dd>
+    <dt>
+      agrif
+    </dt>
+    <dd>
+      http://reference.data.gov.au/def/ont/agrif#
+    </dd>
+    <dt>
+      appf
+    </dt>
+    <dd>
+      http://linked.data.gov.au/def/appf/
+    </dd>
+    <dt>
+      dc
+    </dt>
+    <dd>
+      http://purl.org/dc/elements/1.1/
+    </dd>
+    <dt>
+      def
+    </dt>
+    <dd>
+      http://linked.data.gov.au/def/
+    </dd>
+    <dt>
+      foaf
+    </dt>
+    <dd>
+      http://xmlns.com/foaf/0.1/
+    </dd>
+    <dt>
+      orcid-org
+    </dt>
+    <dd>
+      https://orcid.org/
+    </dd>
+    <dt>
+      org
+    </dt>
+    <dd>
+      http://www.w3.org/ns/org#
+    </dd>
+    <dt>
+      owl
+    </dt>
+    <dd>
+      http://www.w3.org/2002/07/owl#
+    </dd>
+    <dt>
+      rdf
+    </dt>
+    <dd>
+      http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    </dd>
+    <dt>
+      rdfs
+    </dt>
+    <dd>
+      http://www.w3.org/2000/01/rdf-schema#
+    </dd>
+    <dt>
+      skos
+    </dt>
+    <dd>
+      http://www.w3.org/2004/02/skos/core#
+    </dd>
+    <dt>
+      terms
+    </dt>
+    <dd>
+      http://purl.org/dc/terms/
+    </dd>
+    <dt>
+      time
+    </dt>
+    <dd>
+      http://www.w3.org/ns/time/
+    </dd>
+    <dt>
+      vann
+    </dt>
+    <dd>
+      http://purl.org/vocab/vann/
+    </dd>
+    <dt>
+      xsd
+    </dt>
+    <dd>
+      http://www.w3.org/2001/XMLSchema#
+    </dd>
+  </dl>
+</div>
+<p class="endnote">This HTML document was obtained by processing the OWL ontology source code through <a href="http://lode2.promsns.org">LODE 2</a>, <em>Live OWL Documentation Environment, v2</em>, originally developed by <a href="http://www.essepuntato.it">Silvio Peroni</a> and updated by <a href="http://www.edmondchuc.com">Edmond Chuc</a> at the <a href="http://www.csiro.au">CSIRO</a>.</p>
+</body>
+</html>
