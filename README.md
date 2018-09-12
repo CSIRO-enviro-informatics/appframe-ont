@@ -7,7 +7,18 @@ It is not, yet, a comprehensive modelling of all of the concerns of the Appropri
 It only addresses some aspects of the Appropriations Framework necessary to classify government Entities. This is due to the focus of the development of this ontology: to assist with the creation of a 'Longitudinal Spine' of government functions.
 
 
-* [Administrative Arrangement Orders](http://www.naa.gov.au/information-management/information-governance/aao/index.aspx)
+## Ontology document
+Namespace location:
+* HTML: <http://linked.data.gov.au/def/appframe>
+* RDF turtle: <http://linked.data.gov.au/def/appframe.ttl>
+
+*Note: namespace locations will only work when the ontology is officially published via the [Australian Government Linked Data Working Group](http://linked.data.gov.au)'s PID URI assignment system.*
+
+While under early development, HTML documentation of this ontology can be viewed at: <https://rawgit.com/CSIRO-enviro-informatics/appframe-ont/master/appframe.html>.
+
+Local copies:
+* HTML: [appframe.html](appframe.html)  
+* RDF Turtle: [appframe.ttl](appframe.ttl)>
 
 
 ## License
